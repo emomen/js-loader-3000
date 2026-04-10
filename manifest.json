@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Custom JS on Page Visit",
+  "description": "Execute custom JavaScript on matching pages and manage site-specific scripts.",
+  "version": "1.0",
+  "permissions": ["scripting", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Custom JS on Page Visit",
+    "default_popup": "options.html"
+  }
+}

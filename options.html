@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom JS on Page Visit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Custom JS on Page Visit</h1>
+      <p>Define site patterns and page-specific JavaScript to run when those pages load.</p>
+    </header>
+
+    <section class="form-section">
+      <h2 id="form-title">Add new entry</h2>
+      <form id="entry-form">
+        <label for="url-pattern">URL pattern</label>
+        <input id="url-pattern" placeholder="https://example.com/*" required />
+        <small>Use wildcards (*) or regexp: prefix, for example <code>regexp:^https://(www\.)?example\.com/</code>.</small>
+
+        <label for="custom-code">Custom JS</label>
+        <textarea id="custom-code" rows="10" placeholder="console.log('Hello, page!');" required></textarea>
+
+        <div class="form-actions">
+          <button type="submit" id="save-button">Save entry</button>
+          <button type="button" id="cancel-button" class="secondary">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="entries-section">
+      <h2>Saved entries</h2>
+      <div id="entries" class="entries"></div>
+    </section>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
