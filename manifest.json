@@ -3,7 +3,7 @@
   "name": "Custom JS on Page Visit",
   "description": "Execute custom JavaScript on matching pages and manage site-specific scripts.",
   "version": "1.0",
-  "permissions": ["scripting", "storage", "tabs"],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
@@ -12,9 +12,6 @@
       "run_at": "document_start"
     }
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "options_page": "options.html",
   "action": {
     "default_title": "Custom JS on Page Visit",
