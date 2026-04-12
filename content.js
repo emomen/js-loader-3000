@@ -28,4 +28,14 @@ function runCustomCode(code, pattern) {
   }
 }
 
-// Removed injection logic as custom JS now runs via content script on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  const url = window.location.href;
+  chrome.storage.sync.get({ [STORAGE_KEY]: [] }, (data) => {
+    const entries = data[STORAGE_KEY] || [];
+    for (const entry of entries) {
+      if (entry.urlPattern && entry.code && urlMatchesPattern(entry.urlPattern, url)) {
+        runCustomCode(entry.code, entry.urlPattern);
+      }
+    }
+  });
+});
