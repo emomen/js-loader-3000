@@ -5,6 +5,9 @@
   "version": "1.0",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -14,7 +17,6 @@
   ],
   "options_page": "options.html",
   "action": {
-    "default_title": "Custom JS on Page Visit",
-    "default_popup": "options.html"
+    "default_title": "Custom JS on Page Visit"
   }
 }
