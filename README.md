@@ -1,4 +1,4 @@
-# Custom JS on Page Visit
+# JS Loader 3000
 
 A simple Chrome extension that stores site-specific JavaScript snippets and runs them when matching pages load.
 
@@ -6,7 +6,7 @@ A simple Chrome extension that stores site-specific JavaScript snippets and runs
 1. Open Chrome and go to `chrome://extensions`.
 2. Enable `Developer mode`.
 3. Click `Load unpacked`.
-4. Select the `chrome-custom-js-on-visit` folder.
+4. Select the `js-loader-3000` folder.
 
 ## Usage
 - Open the extension options page to add a URL pattern and custom JS code.
