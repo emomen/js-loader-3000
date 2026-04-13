@@ -22,7 +22,10 @@ function urlMatchesPattern(pattern, url) {
 
 function runCustomCode(code, pattern) {
   try {
-    new Function(code)();
+    const script = document.createElement('script');
+    script.src = chrome.runtime.getURL('injected.js');
+    script.dataset.code = code;
+    (document.head || document.documentElement).appendChild(script);
   } catch (error) {
     console.error(`Custom JS execution failed for pattern ${pattern}:`, error);
   }
